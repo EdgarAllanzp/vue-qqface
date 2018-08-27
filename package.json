@@ -12,7 +12,8 @@
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-qqface.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-qqface.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-qqface.min.js"
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-qqface.min.js",
+    "dev": "rollup --config build/rollup.config.js --format iife --file dist/vue-qqface.min.js -w"
   },
   "repository": {
     "type": "git",
