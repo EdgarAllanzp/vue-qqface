@@ -1,16 +1,23 @@
 import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
 import buble from 'rollup-plugin-buble'; // Transpile/polyfill with reasonable browser support
+import resolve from 'rollup-plugin-node-resolve';
+import css from 'rollup-plugin-css-only';
+import copy from 'rollup-copy-plugin';
+
 export default {
-    input: 'src/wrapper.js', // Path relative to package.json
+    input: 'src/index.js', // Path relative to package.json
     output: {
-        name: 'MyComponent',
-        exports: 'named',
+        name: 'VueQqface',
+        exports: 'named'
     },
     plugins: [
         vue({
-            css: true, // Dynamically inject css as a <style> tag
-            compileTemplate: true, // Explicitly convert template to render function
+            css: false,
+        }),
+        css({
+            output: 'dist/vue-qqface.css'
         }),
         buble(), // Transpile to ES5
+        resolve(),
     ],
 };

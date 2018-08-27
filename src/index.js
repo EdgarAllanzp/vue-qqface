@@ -1,11 +1,11 @@
 // Import vue component
-import component from './my-component.vue';
+import component from './qq-face.vue';
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {
 	if (install.installed) return;
 	install.installed = true;
-	Vue.component('MyComponent', component);
+	Vue.component('VueQqface', component);
 }
 
 // Create module definition for Vue.use()
