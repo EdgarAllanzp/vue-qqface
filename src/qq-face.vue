@@ -1,7 +1,7 @@
 <template>
   <div class="vue-qqface">
     <span class="vue-qqface-btn" @click="handleClick" ref="reference"></span>
-    <div v-show="showPopper" ref="popper" class="vue-qqface-panel">
+    <div v-show="showPopper" ref="popper" class="vue-qqface-panel" v-clickoutside="hide">
       <ul class="qqface-list">
         <li class="qqface-item" 
             v-for="qqface in qqfaceList"
@@ -20,6 +20,7 @@
 <script>
 import PopperJS from 'popper.js';
 import qqfaceList from './face-list';
+import clickoutside from './clickoutside';
 import RangeUtil from './rangeUtil';
 
 export default {
@@ -28,6 +29,10 @@ export default {
       type: String,
       required: true
     }
+  },
+
+  directives: {
+    clickoutside
   },
 
   data() {
@@ -64,6 +69,11 @@ export default {
 
     },
 
+    hide(evt) {
+      if (evt.target === this.$refs['reference']) return;
+      this.showPopper = false;
+    },
+
     hasFocus () {
       return document.activeElement === this.editArea;
     },
@@ -91,10 +101,7 @@ export default {
     },
 
     insertFace (img) {
-      console.log(img);
-      console.log(this.editArea);
       this.editArea.focus();
-      console.log(this.editArea);
       if (this.selection) {
         RangeUtil.restoreSelection(this.selection);
       }
