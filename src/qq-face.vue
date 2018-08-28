@@ -2,7 +2,11 @@
   <div class="vue-qqface">
     <span class="vue-qqface-btn" @click="handleClick" ref="reference"></span>
     <div v-show="showPopper" ref="popper" class="vue-qqface-panel">
-      2333
+      <ul class="qqface-list">
+        <li class="qqface-item">
+          <span class="qqface qqface-aini"></span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -70,6 +74,27 @@ export default {
     border-radius: 3px;
     border: 1px solid #e7e7e7;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  }
+
+  .qqface-list {
+    padding-left: 0;
+  }
+
+  .qqface-item {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .qqface {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .qqface-aini {
+    background: url('../images/qqfaces/aini.gif');
   }
 }
 </style>
