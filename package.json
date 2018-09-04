@@ -1,6 +1,6 @@
 {
   "name": "vue-qqface",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/vue-qqface.umd.js",
   "module": "dist/vue-qqface.esm.js",

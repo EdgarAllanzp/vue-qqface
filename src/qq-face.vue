@@ -1,6 +1,6 @@
 <template>
   <div class="vue-qqface">
-    <span class="vue-qqface-btn" @click="handleClick" ref="reference"></span>
+    <span class="vue-qqface-btn" @click="handleClick" ref="reference" @mousedown="saveSelection"></span>
     <div v-show="showPopper" ref="popper" class="vue-qqface-panel" v-clickoutside="hide">
       <ul class="qqface-list">
         <li class="qqface-item" 
@@ -24,13 +24,6 @@ import clickoutside from './clickoutside';
 import RangeUtil from './rangeUtil';
 
 export default {
-  props: {
-    selectorStr: {
-      type: String,
-      required: true
-    }
-  },
-
   directives: {
     clickoutside
   },
@@ -87,7 +80,7 @@ export default {
     pickFace (face) {
       const img = this.getImgFace(face);
       this.insertFace(img);
-      this.showPanel = false;
+      this.showPopper = false;
     },
 
     getImgFace (face) {
@@ -111,10 +104,6 @@ export default {
         this.$emit('select');
       });
     }
-  },
-
-  mounted() {
-    this.editArea = document.querySelector(this.selectorStr);
   }
 };
 </script>
@@ -140,6 +129,7 @@ export default {
     padding: 8px;
     border-radius: 3px;
     border: 1px solid #e7e7e7;
+    background-color: #fff;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
   }
 

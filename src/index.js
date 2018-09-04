@@ -1,10 +1,12 @@
 // Import vue component
 import component from './qq-face.vue';
+import directive from './directive';
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {
 	if (install.installed) return;
 	install.installed = true;
+	Vue.directive('face', directive);
 	Vue.component('VueQqface', component);
 }
 

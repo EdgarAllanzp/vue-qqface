@@ -8,8 +8,8 @@
 </head>
 <body>
   <div id="app">
-    <div class="text-area" contenteditable="true"></div>
-    <vue-qqface selector-str=".text-area"></vue-qqface>
+    <div class="text-area" contenteditable="true" v-face:face></div>
+    <vue-qqface ref="face"></vue-qqface>
   </div>
   <script src="vue.js"></script>
   <script src="../dist/vue-qqface.min.js"></script>
