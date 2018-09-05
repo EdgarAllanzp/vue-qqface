@@ -2,6 +2,8 @@
 
 基于 Vue2.x 的 QQ表情组件
 
+![vue-qqface](https://raw.githubusercontent.com/EdgarAllanzp/vue-qqface/master/vue-qqface-example.gif)
+
 ## 安装
 ```
 yarn add vue-qqface
