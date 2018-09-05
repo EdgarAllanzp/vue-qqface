@@ -5,9 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>qqface</title>
   <link rel="stylesheet" href="../dist/vue-qqface.css">
+  <style>
+    .text-area {
+      height: 64px;
+      width: 300px;
+      padding: 8px;
+      margin-bottom: 8px;
+      outline: 0;
+      overflow: auto;
+      border: 1px solid rgb(102, 102, 102);
+    } 
+  </style>
 </head>
 <body>
   <div id="app">
+    <h1>Vue-QQface</h1>
     <div class="text-area" contenteditable="true" v-face:face></div>
     <vue-qqface ref="face"></vue-qqface>
   </div>

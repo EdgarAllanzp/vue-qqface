@@ -9,6 +9,7 @@
     "./sfc": "src/vue-qqface.vue"
   },
   "scripts": {
+    "fetchfaces": "node ./lib/fetch-qqface.js",
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-qqface.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-qqface.esm.js",
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/EdgarAllanzp/vue-qqface#readme",
   "devDependencies": {
+    "mkdirp": "^0.5.1",
     "node-sass": "^4.9.3",
     "rollup-plugin-buble": "^0.19.2",
     "rollup-plugin-css-only": "^0.4.0",
