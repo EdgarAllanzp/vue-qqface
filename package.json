@@ -1,6 +1,6 @@
 {
   "name": "vue-qqface",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/vue-qqface.umd.js",
   "module": "dist/vue-qqface.esm.js",
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/EdgarAllanzp/vue-qqface.git"
   },
-  "keywords": [],
+  "keywords": ["qqface", "qq", "face", "vue"],
   "author": "",
   "license": "ISC",
   "bugs": {
